@@ -57,6 +57,7 @@
     <Compile Include="Builders\Commands\CloseCommand.cs" />
     <Compile Include="Builders\Commands\BulkCommand.cs" />
     <Compile Include="Builders\Commands\DeleteByQueryCommand.cs" />
+    <Compile Include="Builders\Commands\MultiSearchCommand.cs" />
     <Compile Include="Builders\Commands\SearchScrollCommand.cs" />
     <Compile Include="Builders\Commands\MoreLikeThisCommand.cs" />
     <Compile Include="Builders\Commands\CreateIndexCommand.cs" />
@@ -157,6 +158,7 @@
     <Compile Include="Builders\Mappings\Properties.cs" />
     <Compile Include="Builders\Mappings\RootObject.cs" />
     <Compile Include="Builders\Mappings\Core\StringMap.cs" />
+    <Compile Include="Builders\MultiSearch\MultiSearchBuilder.cs" />
     <Compile Include="Builders\Queries\ConstantScoreQuery.cs" />
     <Compile Include="Builders\Queries\BoostingQuery.cs" />
     <Compile Include="Builders\Queries\Facets\DateHistogramFacet.cs" />

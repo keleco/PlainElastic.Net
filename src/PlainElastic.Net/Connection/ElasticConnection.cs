@@ -13,10 +13,11 @@ namespace PlainElastic.Net
         private IWebProxy proxy;
         private bool proxySet;
 
-        public ElasticConnection(string defaultHost = null, int defaultPort = 9200)
+        public ElasticConnection(string defaultHost = null, int defaultPort = 9200, string defaultProtocol = "http" )
         {
             DefaultHost = defaultHost;
             DefaultPort = defaultPort;
+            DefaultProtocol = defaultProtocol;
             Timeout = 60 * 1000; // 60 seconds
         }
 
@@ -24,6 +25,8 @@ namespace PlainElastic.Net
         public string DefaultHost { get; set; }
 
         public int DefaultPort { get; set; }
+
+        public string DefaultProtocol { get; set; }
 
         public IWebProxy Proxy
         {
@@ -256,7 +259,7 @@ namespace PlainElastic.Net
             if (Uri.IsWellFormedUriString(command, UriKind.Absolute))
                 return command;
 
-            return @"http://{0}:{1}/{2}".F(DefaultHost, DefaultPort, command);
+            return @"{0}://{1}:{2}/{3}".F(DefaultProtocol, DefaultHost, DefaultPort, command);
         }
     }
 }
